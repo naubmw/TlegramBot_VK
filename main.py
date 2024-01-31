@@ -4,6 +4,7 @@ import telegram
 import asyncio
 from PIL import Image
 import setting
+print(1)
 
 # Замените 'YourTelegramBotToken' на ваш токен бота в Telegram
 bot_token = setting.bot_token

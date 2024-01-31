@@ -61,11 +61,12 @@ async def track_new_posts():
                     
                     if link:
                         image = download_image(link)
-                        message = f"Новый пост в группе Вконтакте!\n\n{text}"
+        # Пауза в 1 минуту перед следующей проверкой
+                        message = f"Новый пост в группе Вконтакте! https://vk.com/public217414089\n\n{text}"
                         await send_message_with_image(message, image)
                     else:
                         message = f"Новый пост в группе Вконтакте! https://vk.com/public217414089 \n\n{text}"
-                        await send_message(message)
+                        await send_message_with_image(message, image)
                 
                 last_post_id = post['id']
         

@@ -1,4 +1,3 @@
 requests
-json
 python-telegram-bot
 pytz

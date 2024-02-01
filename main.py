@@ -16,7 +16,12 @@ vk_access_token = setting.vk_access_token
 # Функция для отправки сообщения с изображением в группу в Telegram
 async def send_message_with_image(message, image):
     bot = telegram.Bot(token=bot_token)
-    await bot.send_photo(chat_id=bot_chatID, photo=image, caption=message)
+    
+    if image is not None:
+        await bot.send_photo(chat_id=bot_chatID, photo=image, caption=message)
+    else:
+        await bot.send_message(chat_id=bot_chatID, text=message)
+
 
 # Получение информации о последних постах в группе Вконтакте
 def get_latest_posts():

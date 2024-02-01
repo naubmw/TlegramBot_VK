@@ -1,4 +1,0 @@
-requests
-python-telegram-bot
-pytz #123
-Pillow

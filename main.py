@@ -35,6 +35,7 @@ def get_latest_posts():
 
 # Загрузка изображения из Вконтакте
 def download_image(url):
+    image = None
     response = requests.get(url)
     image = response.content
     return image

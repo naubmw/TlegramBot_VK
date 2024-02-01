@@ -35,11 +35,12 @@ def get_latest_posts():
 
 # Загрузка изображения из Вконтакте
 def download_image(url):
-    image = None
     response = requests.get(url)
-    image = response.content
-    return image
-
+    if response.status_code == 200:
+        image = response.content
+        return image
+    else:
+        return None
 # Отслеживание новых постов и отправка их в группу Telegram
 async def track_new_posts():
     last_post_id = 0

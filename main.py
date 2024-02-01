@@ -4,7 +4,7 @@ import asyncio
 import telegram
 from PIL import Image
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-
+print(1)
 # Замените 'YourTelegramBotToken' на ваш токен бота в Telegram
 bot_token = 'YourTelegramBotToken'
 

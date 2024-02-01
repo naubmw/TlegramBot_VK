@@ -2,7 +2,8 @@ import requests
 import json
 import telegram
 import asyncio
-from PIL import Ismage
+from PIL import Image
+
 import setting
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 

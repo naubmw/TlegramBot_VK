@@ -72,7 +72,7 @@ async def track_new_posts():
                             await send_message_with_image(message, image)
                         else:
                             message = f"Новый пост в группе Вконтакте! https://vk.com/public{group_id} \n\n{text}"
-                         -   await send_message_with_image(message, None)
+                            await send_message_with_image(message, None)
                     
                     last_post_ids[group_id] = post['id']
         

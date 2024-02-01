@@ -74,5 +74,5 @@ async def track_new_posts():
         
         # Пауза в 1 минуту перед следующей проверкой
         await asyncio.sleep(60)
-
+image = None
 asyncio.run(track_new_posts())

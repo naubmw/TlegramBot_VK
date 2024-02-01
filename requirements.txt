@@ -1,5 +1,5 @@
 requests
-python-telegram-bot==13.7
+python-telegram-bot
 urllib3
 pytz
 pillow

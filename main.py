@@ -4,7 +4,6 @@ import telegram
 import asyncio
 from PIL import Image
 import setting
-print(1)
 
 # Замените 'YourTelegramBotToken' на ваш токен бота в Telegram
 bot_token = setting.bot_token
@@ -23,7 +22,6 @@ async def send_message_with_image(message, image):
 def get_latest_posts():
     url = f'https://api.vk.com/method/wall.get?owner_id=-{vk_group_id}&count=5&access_token={vk_access_token}&v=5.131'
     response = requests.get(url)
-    print(response)
     
     data = json.loads(response.text)
     
@@ -41,6 +39,7 @@ def download_image(url):
         return image
     else:
         return None
+
 # Отслеживание новых постов и отправка их в группу Telegram
 async def track_new_posts():
     last_post_id = 0
@@ -64,16 +63,17 @@ async def track_new_posts():
                     
                     if link:
                         image = download_image(link)
-        # Пауза в 1 минуту перед следующей проверкой
+                        # Пауза в 1 минуту перед следующей проверкой
                         message = f"Новый пост в группе Вконтакте! https://vk.com/public217414089\n\n{text}"
                         await send_message_with_image(message, image)
                     else:
+                        # Пауза в 1 минуту перед следующей проверкой
                         message = f"Новый пост в группе Вконтакте! https://vk.com/public217414089 \n\n{text}"
-                        await send_message_with_image(message, image)
+                        await send_message_with_image(message, None)
                 
                 last_post_id = post['id']
         
         # Пауза в 1 минуту перед следующей проверкой
         await asyncio.sleep(60)
-image = None
+
 asyncio.run(track_new_posts())

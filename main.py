@@ -12,7 +12,7 @@ bot_chatID = setting.bot_chatID
 # Замените ['YourVKGroupID1', 'YourVKGroupID2'] на список ID ваших групп Вконтакте
 vk_group_ids = setting.vk_group_ids
 vk_access_token = setting.vk_access_token
-print(3)
+print(2)
 
 # Функция для отправки сообщения с изображением в группу в Telegram
 async def send_message_with_image(message, image):
